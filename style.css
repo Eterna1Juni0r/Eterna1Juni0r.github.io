@@ -1,0 +1,135 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background: #f9f9f9;
+}
+
+.word {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
+
+/* Меняй тут */
+
+.progress-ring {
+  width: 150px;
+  height: 150px;
+  transform: rotate(-90deg); /* Для начала с верхнего положения */
+  animation: rotation 1s linear infinite;
+}
+
+.progress-ring__background {
+  fill: none;
+  stroke: #eff3f6; /* Цвет фона */
+  stroke-width: 12;
+}
+
+.progress-ring__circle {
+  fill: none;
+  stroke: #005bff; /* Цвет прогресса */
+  stroke-width: 12;
+  stroke-dasharray: 339.292; /* Длина окружности: 2 * π * r (где r = 54) */
+  stroke-dashoffset: 339.292; /* Полностью скрываем в начале */
+  transition: stroke-dashoffset 0.5s ease, stroke 0.3s ease;
+}
+
+/* Меняй там */
+
+.progress-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(-90deg);
+  }
+  to {
+    transform: rotate(270deg);
+  }
+}
+
+@media screen and (orientation: portrait) {
+  #toolbar {
+    width: 320px;
+    height: 568px;
+  }
+  .progress-container {
+    flex-direction: column;
+  }
+}
+
+@media screen and (orientation: landscape) {
+  #toolbar {
+    width: 568px;
+    height: 320px;
+  }
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+input[type="number"] {
+  width: 50px;
+  height: 30px;
+  text-align: center;
+  font-size: 18px;
+  border: 1px solid #2e2e2e;
+  box-sizing: border-box;
+  border-radius: 15px;
+}
+
+input[type="checkbox"] {
+  width: 50px;
+  height: 30px;
+  position: relative;
+  appearance: none;
+  background: #e0e6ef;
+  border-radius: 15px;
+  margin: 0;
+  outline: none;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+input[type="checkbox"]:checked {
+  background: #005bff;
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #fff;
+  top: 3px;
+  left: 3px;
+  transition: transform 0.3s ease-in-out;
+}
+
+input[type="checkbox"]:checked::before {
+  transform: translateX(20px);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
