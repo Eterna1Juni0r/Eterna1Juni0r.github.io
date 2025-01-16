@@ -14,31 +14,31 @@ body {
   left: 5px;
 }
 
-/* Меняй тут */
+
 
 .progress-ring {
   width: 150px;
   height: 150px;
-  transform: rotate(-90deg); /* Для начала с верхнего положения */
+  transform: rotate(-90deg); 
   animation: rotation 1s linear infinite;
 }
 
 .progress-ring__background {
   fill: none;
-  stroke: #eff3f6; /* Цвет фона */
+  stroke: #eff3f6; 
   stroke-width: 12;
 }
 
 .progress-ring__circle {
   fill: none;
-  stroke: #005bff; /* Цвет прогресса */
+  stroke: #005bff; 
   stroke-width: 12;
-  stroke-dasharray: 339.292; /* Длина окружности: 2 * π * r (где r = 54) */
-  stroke-dashoffset: 339.292; /* Полностью скрываем в начале */
+  stroke-dasharray: 339.292; 
+  stroke-dashoffset: 339.292; 
   transition: stroke-dashoffset 0.5s ease, stroke 0.3s ease;
 }
 
-/* Меняй там */
+
 
 .progress-container {
   position: relative;
