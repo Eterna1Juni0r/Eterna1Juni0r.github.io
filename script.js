@@ -6,6 +6,15 @@ const hideToggle = document.getElementById("hideToggle");
 
 let isAnimating = false;
 
+valueInput.addEventListener("input", () => {
+  const value = Number(valueInput.value);
+  const max = Number(valueInput.max);
+  const min = Number(valueInput.min);
+
+  if (value > max) valueInput.value = max;
+  else if (value < min) valueInput.value = min;
+});
+
 const progressAPI = {
   setProgress(value) {
     const clampedValue = Math.min(Math.max(value, 0), 100);
