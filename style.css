@@ -41,6 +41,7 @@ body {
 /* Меняй там */
 
 .progress-container {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
